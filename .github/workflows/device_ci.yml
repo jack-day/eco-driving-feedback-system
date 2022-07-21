@@ -1,0 +1,131 @@
+name: Device CI
+
+env:
+  DEVICE_ENV: testing
+  PGHOST: localhost
+  PGPORT: 5432
+  PGUSER: postgres
+  PGPASSWORD: postgres
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 ./device --count --select=E9,F63,F7,F82 --show-source --statistics
+        # run again with exit-zero set, treating all errors as warnings and preventing the action from failing
+        flake8 ./device --count --exit-zero --max-complexity=10 --statistics
+  tests:
+    runs-on: ubuntu-20.04
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_USER: ${{ env.PGUSER }}
+          POSTGRES_PASSWORD: ${{ env.PGPASSWORD }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      timescaledb:
+        image: timescale/timescaledb:latest-pg14
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Set up database
+      run: createdb device_test && psql device_test -f device/db/init.sql
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        cd device
+        pip install -r requirements.txt
+        pip install -r requirements_dev.txt
+        cp config_default.ini config.ini
+    - name: Run tests with pytest
+      run: cd device && coverage run -m pytest
+    - name: Output coverage
+      run: |
+        cd device
+        rm -f doc/coverage.md
+        printf "# Test Coverage\n\`\`\`\n" > doc/coverage.md
+        coverage report -m --omit="tests/*" >> doc/coverage.md
+    - name: Commit coverage output
+      uses: EndBug/add-and-commit@v7
+      with:
+        message: "Device CI - Generate coverage report"
+        author_name: "Device CI Action"
+        add: "./device/doc/coverage.md"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  docs:
+    runs-on: ubuntu-20.04
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_USER: ${{ env.PGUSER }}
+          POSTGRES_PASSWORD: ${{ env.PGPASSWORD }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      timescaledb:
+        image: timescale/timescaledb:latest-pg14
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Set up database
+        run: createdb device_test && psql device_test -f device/db/init.sql
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          cd device
+          pip install -r requirements.txt
+          pip install -r requirements_dev.txt
+          cp config_default.ini config.ini
+      - name: Generate Documentation
+        run: |
+          cd device/doc/sphinx
+          sphinx-apidoc -f -o . ../..
+          make html
+      - name: Commit Docs
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Device CI - Generate Docs"
+          author_name: "Device CI Action"
+          add: "./device/doc/html/*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

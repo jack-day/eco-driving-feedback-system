@@ -1,0 +1,47 @@
+# Simulated GPS Data
+# ----------------------------------
+# Time intervals are used as keys
+# - Time intervals are the seconds since the script started running
+# - These are used to switch test coordinates after a specified time
+# - The coordinates returned to the application are interpolated if the current
+#   time is in-between time intervals.
+# - In this example, we have the time intervals 0, 2, 3, 18, 19 and 40
+# - Time intervals loop infinitely, meaning after 40 seconds, the program begins
+#   to use the coordinates from 0 seconds again
+# 
+# ----------------------
+# Not a road and thus simulates errors
+# ----------------------
+0:
+  # Used from the start of the script (0 seconds)
+  latitude: 50.894413
+  longitude: -1.003007
+2:
+  # Used after 2 seconds have passed
+  latitude: 50.892862
+  longitude: -1.003765
+# ----------------------
+# 70mph / 113kmh speed limit
+# ----------------------
+3:
+  # Used after 3 seconds have passed
+  latitude: 50.894064
+  longitude: -0.999009
+# Interpolated if between 3 and 18 seconds
+18:
+  # Used after 18 seconds have passed
+  latitude: 50.888691
+  longitude: -1.002291
+# ----------------------
+# 30mph / 48kmh speed limit
+# ----------------------
+19:
+  # Used after 19 seconds have passed
+  latitude: 50.888645 
+  longitude: -1.024377
+# Interpolated if between 19 and 40 seconds
+40:
+  # Used after 40 seconds have passed
+  latitude: 50.883660
+  longitude: -1.028146
+# Loop back to 0 seconds

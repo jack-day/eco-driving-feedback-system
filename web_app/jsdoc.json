@@ -1,0 +1,18 @@
+{
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": ["public"]
+  },
+  "templates": {
+    "default": {
+      "includeDate": false,
+      "outputSourceFiles": false
+    }
+  },
+  "opts": {
+    "destination": "doc/client",
+    "template": "node_modules/minami",
+    "readme": "README.md",
+    "recurse": true
+  }
+}

@@ -1,0 +1,135 @@
+paths:
+  /scores:
+    get:
+      summary: Get scores
+      description: Gets the authenticated user's scores, sorted with the most recently calculated scores first.
+      tags:
+        - Scores
+      parameters:
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum:
+              - ecoDriving
+              - drivAccSmoothness
+              - startAccSmoothness
+              - decSmoothness
+              - gsiAdh
+              - speedLimitAdh
+              - motorwaySpeed
+              - idleDuration
+              - journeyIdlePct
+              - journeyDistance
+          description: The type of score to be returned
+        - in: query
+          name: limit
+          schema:
+            type: string
+            pattern: '^\d+$'
+          description: The maximum number of entries to be returned
+        - in: query
+          name: maxDaysAgo
+          schema:
+            type: string
+            pattern: '^\d+$'
+          description: The maximum number of days ago a score can be calculated at
+      responses:
+        200:
+          description: Retrieved scores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scores'
+        400:
+          description: Invalid query parameters
+          content:
+            $ref: '#/components/responses/400Content'
+        401:
+          $ref: '#/components/responses/401'
+        500:
+          $ref: '#/components/responses/500'
+    post:
+      summary: Add new scores
+      tags:
+        - Scores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Scores'
+      responses:
+        201:
+          description: Scores added
+        400:
+          description: Invalid body data
+          content:
+            $ref: '#/components/responses/400Content'
+        401:
+          $ref: '#/components/responses/401'
+        500:
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    Scores:
+      type: object
+      required:
+        - calculatedAt
+        - ecoDriving
+      properties:
+        calculatedAt:
+          type: string
+          format: date-time
+        ecoDriving:
+          description: Eco-driving score
+          type: integer
+          min: 0
+          max: 100
+        drivAccSmoothness:
+          description: Driving acceleration smoothness score
+          type: integer
+          min: 0
+          max: 100
+        startAccSmoothness:
+          description: Starting acceleration smoothness score
+          type: integer
+          min: 0
+          max: 100
+        decSmoothness:
+          description: Deceleration smoothness score
+          type: integer
+          min: 0
+          max: 100
+        gsiAdh:
+          description: Gear Shifting Indicator adherence score
+          type: integer
+          min: 0
+          max: 100
+        speedLimitAdh:
+          description: Speed limit adherence score
+          type: integer
+          min: 0
+          max: 100
+        motorwaySpeed:
+          description: Motorway speed score
+          type: integer
+          min: 0
+          max: 100
+        idleDuration:
+          description: Average idle duration score
+          type: integer
+          min: 0
+          max: 100
+        journeyIdlePct:
+          description: Percentage of journey time idling score
+          type: integer
+          min: 0
+          max: 100
+        journeyDistance:
+          description: Journey distance score
+          type: integer
+          min: 0
+          max: 100

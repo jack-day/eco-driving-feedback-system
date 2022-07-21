@@ -1,0 +1,11 @@
+vehicleSpecs:
+  curbWeight: 500
+  frontalArea: 2
+  maxFuel: 0
+  dragCoeff: 0.35
+  gearCount: 3
+  gears:
+    - 100
+    - 50
+    - 30
+    - 20

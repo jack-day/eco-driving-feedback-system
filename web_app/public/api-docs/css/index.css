@@ -1,0 +1,9 @@
+/* stylelint-disable selector-class-pattern */
+
+body {
+    padding-bottom: 10vh;
+}
+
+.swagger-ui .authorization__btn {
+    cursor: default;
+}

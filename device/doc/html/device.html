@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>device package &mdash; Eco-driving Device  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="device" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Eco-driving Device
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">device</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">device package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.api">device.api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.config">device.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.db">device.db module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.display">device.display module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.gps">device.gps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.gsi">device.gsi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.main">device.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.obd_ii">device.obd_ii module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.performance">device.performance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.settings">device.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device.utils">device.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-device">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Eco-driving Device</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">device</a> &raquo;</li>
+      <li>device package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/device.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="device-package">
+<h1>device package<a class="headerlink" href="#device-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-device.api">
+<span id="device-api-module"></span><h2>device.api module<a class="headerlink" href="#module-device.api" title="Permalink to this headline"></a></h2>
+<p>API Interaction</p>
+<p>Provides interaction with the EcoDriven web app REST API.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="device.api.addScores">
+<span class="sig-prename descclassname"><span class="pre">device.api.</span></span><span class="sig-name descname"><span class="pre">addScores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.api.addScores" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.api.apiCall">
+<span class="sig-prename descclassname"><span class="pre">device.api.</span></span><span class="sig-name descname"><span class="pre">apiCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.api.apiCall" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.api.createJourney">
+<span class="sig-prename descclassname"><span class="pre">device.api.</span></span><span class="sig-name descname"><span class="pre">createJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.api.createJourney" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.api.updateJourney">
+<span class="sig-prename descclassname"><span class="pre">device.api.</span></span><span class="sig-name descname"><span class="pre">updateJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.api.updateJourney" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-device.config">
+<span id="device-config-module"></span><h2>device.config module<a class="headerlink" href="#module-device.config" title="Permalink to this headline"></a></h2>
+<p>Config Loader</p>
+<p>Loads config.ini and selects the current config based on the DEVICE_ENV
+environment variable.</p>
+</section>
+<section id="module-device.db">
+<span id="device-db-module"></span><h2>device.db module<a class="headerlink" href="#module-device.db" title="Permalink to this headline"></a></h2>
+<p>Database Interaction</p>
+<p>Provides a connection to the database and functions to retrieve and alter
+data stored in it.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="device.db.JOURNEY_INTVL">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">JOURNEY_INTVL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">600</span></em><a class="headerlink" href="#device.db.JOURNEY_INTVL" title="Permalink to this definition"></a></dt>
+<dd><p>Time interval between driving data entries at which a new journey should be
+created</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.createDrivingData">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">createDrivingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.createDrivingData" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new driving data entry in the database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.createJourney">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">createJourney</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.db.createJourney" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new journey entry in the database, returning it’s data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.drivingDataRowToDict">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">drivingDataRowToDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.drivingDataRowToDict" title="Permalink to this definition"></a></dt>
+<dd><p>Coverts a row from the driving data table into a dictionary with
+standardised keys</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getCurrentJourney">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getCurrentJourney</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getCurrentJourney" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the current journey based on the timestamp of the most recent
+driving data entry</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getJourney">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getJourney" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves a journey with a given id from the database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getJourneyApiID">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getJourneyApiID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journeyID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getJourneyApiID" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the API journey ID from a journey with a given id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getJourneyDrivingData">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getJourneyDrivingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journeyID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getJourneyDrivingData" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves all driving data from a given journey</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getJourneyIDsWithinLastNdays">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getJourneyIDsWithinLastNdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndays</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getJourneyIDsWithinLastNdays" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the IDs of all journeys that started in the last n days</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.getRoofAtt">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">getRoofAtt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.getRoofAtt" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves a roof attachment with a given id from the database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.journeyRowToDict">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">journeyRowToDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.journeyRowToDict" title="Permalink to this definition"></a></dt>
+<dd><p>Coverts a row from the journey table into a dictionary with standardised
+keys</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.db.updateJourneyApiID">
+<span class="sig-prename descclassname"><span class="pre">device.db.</span></span><span class="sig-name descname"><span class="pre">updateJourneyApiID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journeyID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apiJourneyID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.db.updateJourneyApiID" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the API journey ID of a journey with a given id</p>
+</dd></dl>
+
+</section>
+<section id="module-device.display">
+<span id="device-display-module"></span><h2>device.display module<a class="headerlink" href="#module-device.display" title="Permalink to this headline"></a></h2>
+<p>Display Interaction</p>
+<p>Provides interaction with the Raspberry Pis display HAT.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="device.display.Display">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.display.</span></span><span class="sig-name descname"><span class="pre">Display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gsi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accFdbck</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.clear" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the entire display</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draw loop for the entire display</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.initButtons">
+<span class="sig-name descname"><span class="pre">initButtons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.initButtons" title="Permalink to this definition"></a></dt>
+<dd><p>Input pin/buttons setup</p>
+<p>Adapted from code found here:
+<a class="reference external" href="https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/usage#library-usage-3024370-20">https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/usage#library-usage-3024370-20</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.initDisplay">
+<span class="sig-name descname"><span class="pre">initDisplay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.initDisplay" title="Permalink to this definition"></a></dt>
+<dd><p>Display Initialisation</p>
+<p>Adapted from code found here:
+<a class="reference external" href="https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/usage#library-usage-3024370-20">https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/usage#library-usage-3024370-20</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.loadImgs">
+<span class="sig-name descname"><span class="pre">loadImgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.loadImgs" title="Permalink to this definition"></a></dt>
+<dd><p>Pre-loads images so they are not loaded during drawing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.display.Display.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.display.Display.stop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.display.loadImg">
+<span class="sig-prename descclassname"><span class="pre">device.display.</span></span><span class="sig-name descname"><span class="pre">loadImg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.display.loadImg" title="Permalink to this definition"></a></dt>
+<dd><p>Loads an image stored in /assets/img/ returning the image object</p>
+</dd></dl>
+
+</section>
+<section id="module-device.gps">
+<span id="device-gps-module"></span><h2>device.gps module<a class="headerlink" href="#module-device.gps" title="Permalink to this headline"></a></h2>
+<p>GPS Coordinate Simulation</p>
+<p>Simulates GPS data from gps.yaml in place of a GPS library
+due to no currently implemented GPS hardware.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="device.gps.getGPSCoords">
+<span class="sig-prename descclassname"><span class="pre">device.gps.</span></span><span class="sig-name descname"><span class="pre">getGPSCoords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.gps.getGPSCoords" title="Permalink to this definition"></a></dt>
+<dd><p>Retreives simulated GPS coordinates based on the time since script start</p>
+<p>The GPS coordinates have time intervals that are used as keys. We select
+the GPS coordinates to be returned by comparing the time intervals to the
+time since the program started running. This time difference is modulo the
+highest set time interval so that the GPS coordinates are infinitely
+looped. If the time difference is inbetween the set time intervals, the GPS
+coordinates are interpolated.</p>
+</dd></dl>
+
+</section>
+<section id="module-device.gsi">
+<span id="device-gsi-module"></span><h2>device.gsi module<a class="headerlink" href="#module-device.gsi" title="Permalink to this headline"></a></h2>
+<p>Gear Shift Indicator (GSI)</p>
+<p>Calculates the most economical upshift point based on OBD data and displays
+shifting lights on the Raspberry Pis display.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="device.gsi.GSI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.gsi.</span></span><span class="sig-name descname"><span class="pre">GSI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">journey</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.ADD_RPM_COEFF">
+<span class="sig-name descname"><span class="pre">ADD_RPM_COEFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#device.gsi.GSI.ADD_RPM_COEFF" title="Permalink to this definition"></a></dt>
+<dd><p>Permitted additional engine speed coefficient</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.AIR_DENSITY">
+<span class="sig-name descname"><span class="pre">AIR_DENSITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.202</span></em><a class="headerlink" href="#device.gsi.GSI.AIR_DENSITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.GRAVITY">
+<span class="sig-name descname"><span class="pre">GRAVITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9.81</span></em><a class="headerlink" href="#device.gsi.GSI.GRAVITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.PSGR_WEIGHT">
+<span class="sig-name descname"><span class="pre">PSGR_WEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">75</span></em><a class="headerlink" href="#device.gsi.GSI.PSGR_WEIGHT" title="Permalink to this definition"></a></dt>
+<dd><p>Passenger weight (kg)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.RMC_COEFF">
+<span class="sig-name descname"><span class="pre">RMC_COEFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.08</span></em><a class="headerlink" href="#device.gsi.GSI.RMC_COEFF" title="Permalink to this definition"></a></dt>
+<dd><p>Rotating mass correction coefficient</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.ROLL_RES_COEFF">
+<span class="sig-name descname"><span class="pre">ROLL_RES_COEFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.01</span></em><a class="headerlink" href="#device.gsi.GSI.ROLL_RES_COEFF" title="Permalink to this definition"></a></dt>
+<dd><p>Coefficient of rolling resistance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.calcDrag">
+<span class="sig-name descname"><span class="pre">calcDrag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frontalArea</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dragCoeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.calcDrag" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates aerodynamic drag</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.calcTracEff">
+<span class="sig-name descname"><span class="pre">calcTracEff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obdData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevOBDData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grade</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.calcTracEff" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates tractive effort</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.calcUpshiftRPM">
+<span class="sig-name descname"><span class="pre">calcUpshiftRPM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obdData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevOBDData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.calcUpshiftRPM" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the optimal upshift RPM</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.dotBounds">
+<span class="sig-name descname"><span class="pre">dotBounds</span></span><a class="headerlink" href="#device.gsi.GSI.dotBounds" title="Permalink to this definition"></a></dt>
+<dd><p>Boundary coordinates for each dot to be used in drawing</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.dotDispCnt">
+<span class="sig-name descname"><span class="pre">dotDispCnt</span></span><a class="headerlink" href="#device.gsi.GSI.dotDispCnt" title="Permalink to this definition"></a></dt>
+<dd><p>Number of dots being displayed on one side of the GSI</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.dotRPMDiff">
+<span class="sig-name descname"><span class="pre">dotRPMDiff</span></span><a class="headerlink" href="#device.gsi.GSI.dotRPMDiff" title="Permalink to this definition"></a></dt>
+<dd><p>RPM diff increment for each indication dot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgDraw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draws the GSI on the display using the given img drawing object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.getCurrentGear">
+<span class="sig-name descname"><span class="pre">getCurrentGear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rpm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.getCurrentGear" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the current gear position</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.getVehicleMass">
+<span class="sig-name descname"><span class="pre">getVehicleMass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.getVehicleMass" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates vehicle mass, accounting for journey variables</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.half">
+<span class="sig-name descname"><span class="pre">half</span></span><a class="headerlink" href="#device.gsi.GSI.half" title="Permalink to this definition"></a></dt>
+<dd><p>Number of indication dots in each side of the GSI</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.initDotBounds">
+<span class="sig-name descname"><span class="pre">initDotBounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.initDotBounds" title="Permalink to this definition"></a></dt>
+<dd><p>Initialise boundary coordinates for each indication dot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.initUpshiftNotice">
+<span class="sig-name descname"><span class="pre">initUpshiftNotice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.initUpshiftNotice" title="Permalink to this definition"></a></dt>
+<dd><p>Initialise upshift notice message</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="device.gsi.GSI.isIndicating">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isIndicating</span></span><a class="headerlink" href="#device.gsi.GSI.isIndicating" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.minRPMDiff">
+<span class="sig-name descname"><span class="pre">minRPMDiff</span></span><a class="headerlink" href="#device.gsi.GSI.minRPMDiff" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum RPM diff between the current and optimal upshift RPM for
+the first indication dot to be displayed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.throttleActive">
+<span class="sig-name descname"><span class="pre">throttleActive</span></span><a class="headerlink" href="#device.gsi.GSI.throttleActive" title="Permalink to this definition"></a></dt>
+<dd><p>Whether the throttle is being pressed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.gsi.GSI.total">
+<span class="sig-name descname"><span class="pre">total</span></span><a class="headerlink" href="#device.gsi.GSI.total" title="Permalink to this definition"></a></dt>
+<dd><p>Total number of indication dots</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.gsi.GSI.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obdData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevOBDData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.gsi.GSI.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the GSI’s status</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-device.main">
+<span id="device-main-module"></span><h2>device.main module<a class="headerlink" href="#module-device.main" title="Permalink to this headline"></a></h2>
+<p>Device Main Application</p>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h3>
+<dl class="footnote brackets">
+<dt class="label" id="id1"><span class="brackets">1</span></dt>
+<dd><p>Portland State Aerospace Society. (2004). A Quick Derivation relating
+altitude to air pressure. Version 1.03.
+<a class="reference external" href="http://psas.pdx.edu/RocketScience/PressureAltitude_Derived.pdf">http://psas.pdx.edu/RocketScience/PressureAltitude_Derived.pdf</a>.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="device.main.getMostConfidentRoute">
+<span class="sig-prename descclassname"><span class="pre">device.main.</span></span><span class="sig-name descname"><span class="pre">getMostConfidentRoute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matchings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.main.getMostConfidentRoute" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the route with the highest confidence for matchings received
+from Mapbox</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.main.getOBDData">
+<span class="sig-prename descclassname"><span class="pre">device.main.</span></span><span class="sig-name descname"><span class="pre">getOBDData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obdConn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.main.getOBDData" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves required OBD data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.main.getSpeedLimit">
+<span class="sig-prename descclassname"><span class="pre">device.main.</span></span><span class="sig-name descname"><span class="pre">getSpeedLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevCoords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.main.getSpeedLimit" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the speed limit for the route of the given coordinates using
+Mapbox’s map matching API</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-device.obd_ii">
+<span id="device-obd-ii-module"></span><h2>device.obd_ii module<a class="headerlink" href="#module-device.obd_ii" title="Permalink to this headline"></a></h2>
+<p>OBD-II Connection and Emulation</p>
+<p>Provides an OBD-II connection based on the ‘obd’ value in the config.ini. If it
+is set to ‘emulated’, a connection will be emulated using Assetto Corsa
+to supply the simulted data. Otherwise the OBD-II connection will be provided
+using the python-obd library.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatedOBD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.obd_ii.</span></span><span class="sig-name descname"><span class="pre">EmulatedOBD</span></span><a class="headerlink" href="#device.obd_ii.EmulatedOBD" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Emulated OBD-II connection,
+acts the same as the OBD class from python-obd</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatedOBD.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatedOBD.close" title="Permalink to this definition"></a></dt>
+<dd><p>Closes the OBD connection</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatedOBD.is_connected">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#device.obd_ii.EmulatedOBD.is_connected" title="Permalink to this definition"></a></dt>
+<dd><p>Returns whether a connection is established with the vehicle</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatedOBD.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatedOBD.query" title="Permalink to this definition"></a></dt>
+<dd><p>Primary API function, sends commands to the car</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatedOBD.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatedOBD.status" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the OBD connection status</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatorClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.obd_ii.</span></span><span class="sig-name descname"><span class="pre">EmulatorClient</span></span><a class="headerlink" href="#device.obd_ii.EmulatorClient" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Emulator client to request data from the OBD2 Assetto Corsa app</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatorClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatorClient.disconnect" title="Permalink to this definition"></a></dt>
+<dd><p>Disconnects from the OBD2 AC app</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatorClient.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatorClient.query" title="Permalink to this definition"></a></dt>
+<dd><p>Sends PID requests to retreive
+simulated data from the OBD2 AC app</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatorClient.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatorClient.recv" title="Permalink to this definition"></a></dt>
+<dd><p>Receives socket messages from the OBD2 AC app</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.obd_ii.EmulatorClient.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.EmulatorClient.send" title="Permalink to this definition"></a></dt>
+<dd><p>Sends socket messages to the OBD2 AC app</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="device.obd_ii.OBDConnect">
+<span class="sig-prename descclassname"><span class="pre">device.obd_ii.</span></span><span class="sig-name descname"><span class="pre">OBDConnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.obd_ii.OBDConnect" title="Permalink to this definition"></a></dt>
+<dd><p>Opens a connection to the OBD interface</p>
+</dd></dl>
+
+</section>
+<section id="module-device.performance">
+<span id="device-performance-module"></span><h2>device.performance module<a class="headerlink" href="#module-device.performance" title="Permalink to this headline"></a></h2>
+<p>Eco Driving Performance</p>
+<p>Calculates and diplays the drivers eco driving performance.</p>
+<img alt="_images/accumulated_feedback_flowchart.png" src="_images/accumulated_feedback_flowchart.png" />
+<dl class="py class">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.performance.</span></span><span class="sig-name descname"><span class="pre">AccumulatedFeedback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currentJourney</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'id':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Accumulated feedback calculated from the drivers eco-driving performance
+over the last 30 days</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.addJourney">
+<span class="sig-name descname"><span class="pre">addJourney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journey</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.addJourney" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a journey to the accumulated feedback and updates the means</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.calcLinearScore">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calcLinearScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverseScore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.calcLinearScore" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates a score from 0 to 100 with a linear distrubtion between a
+min and a max.</p>
+<p>Setting reverseScore to ‘True’ will for example switch 75/100 to 25/100</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.calcMotorwaySpdScore">
+<span class="sig-name descname"><span class="pre">calcMotorwaySpdScore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.calcMotorwaySpdScore" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the score for the mean motorway speed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draws a plant at different levels of growth as an interpretive
+schematic to represent the drivers eco-driving score</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.updEcoDrivingScore">
+<span class="sig-name descname"><span class="pre">updEcoDrivingScore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.updEcoDrivingScore" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the overall eco-driving score</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.updFactorScores">
+<span class="sig-name descname"><span class="pre">updFactorScores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.updFactorScores" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the scores for all eco-driving factors</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.AccumulatedFeedback.updateAPI">
+<span class="sig-name descname"><span class="pre">updateAPI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.AccumulatedFeedback.updateAPI" title="Permalink to this definition"></a></dt>
+<dd><p>Update API with calculated scores</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.performance.</span></span><span class="sig-name descname"><span class="pre">JourneyPerformance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">journeyID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Driving data performance factors for a journey</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.ACC_MIN_SPD_DIFF">
+<span class="sig-name descname"><span class="pre">ACC_MIN_SPD_DIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#device.performance.JourneyPerformance.ACC_MIN_SPD_DIFF" title="Permalink to this definition"></a></dt>
+<dd><p>Minimum speed difference in kmh for differences in speed between
+driving data to be classified as acceleration or deceleration</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.IDLE_MIN_WAIT">
+<span class="sig-name descname"><span class="pre">IDLE_MIN_WAIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#device.performance.JourneyPerformance.IDLE_MIN_WAIT" title="Permalink to this definition"></a></dt>
+<dd><p>Minimum number of seconds at zero speed until the time period is
+classified as idling</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.calcPerformance">
+<span class="sig-name descname"><span class="pre">calcPerformance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.calcPerformance" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates performance statistics from journey driving data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.distance" title="Permalink to this definition"></a></dt>
+<dd><p>Journey distance in kilometers</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.drivingDataCount">
+<span class="sig-name descname"><span class="pre">drivingDataCount</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.drivingDataCount" title="Permalink to this definition"></a></dt>
+<dd><p>Number of driving data entries</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.endTime">
+<span class="sig-name descname"><span class="pre">endTime</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.endTime" title="Permalink to this definition"></a></dt>
+<dd><p>Journey end timestamp</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.idleTime">
+<span class="sig-name descname"><span class="pre">idleTime</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.idleTime" title="Permalink to this definition"></a></dt>
+<dd><p>Total seconds of idles longer than 5 seconds</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.startTime">
+<span class="sig-name descname"><span class="pre">startTime</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.startTime" title="Permalink to this definition"></a></dt>
+<dd><p>Journey start timestamp</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.travelTime">
+<span class="sig-name descname"><span class="pre">travelTime</span></span><a class="headerlink" href="#device.performance.JourneyPerformance.travelTime" title="Permalink to this definition"></a></dt>
+<dd><p>Total journey travel time in seconds</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updAccSmoothness">
+<span class="sig-name descname"><span class="pre">updAccSmoothness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialDrivingData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalDrivingData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updAccSmoothness" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the driving and starting acceleration smoothness means</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updDecSmoothness">
+<span class="sig-name descname"><span class="pre">updDecSmoothness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialDrivingData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalDrivingData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updDecSmoothness" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the deceleration smoothness mean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updDistance">
+<span class="sig-name descname"><span class="pre">updDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialDrivingData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalDrivingData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updDistance" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the journey distance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updGSIAdh">
+<span class="sig-name descname"><span class="pre">updGSIAdh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gsiIsIndicating</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updGSIAdh" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the GSI adherence mean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updIdle">
+<span class="sig-name descname"><span class="pre">updIdle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idleStart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idleStop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updIdle" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the idle duration mean and total idle time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updMotorwaySpd">
+<span class="sig-name descname"><span class="pre">updMotorwaySpd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speedLimit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updMotorwaySpd" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the motorway speed mean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updSpdLimAdh">
+<span class="sig-name descname"><span class="pre">updSpdLimAdh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speedLimit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updSpdLimAdh" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the speed limit adherence mean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.JourneyPerformance.updateAPI">
+<span class="sig-name descname"><span class="pre">updateAPI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.JourneyPerformance.updateAPI" title="Permalink to this definition"></a></dt>
+<dd><p>Update API journey performance stats</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="device.performance.Mean">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">device.performance.</span></span><span class="sig-name descname"><span class="pre">Mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.Mean" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Mean that can be updated by new values</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.Mean.combine">
+<span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.Mean.combine" title="Permalink to this definition"></a></dt>
+<dd><p>Combines the current mean with another mean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="device.performance.Mean.increment">
+<span class="sig-name descname"><span class="pre">increment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newVal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.performance.Mean.increment" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a new value to the mean, recalculating it incrementally</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-device.settings">
+<span id="device-settings-module"></span><h2>device.settings module<a class="headerlink" href="#module-device.settings" title="Permalink to this headline"></a></h2>
+<p>Device Settings</p>
+<p>Reads and modifies the device’s settings stored in settings.yaml</p>
+</section>
+<section id="module-device.utils">
+<span id="device-utils-module"></span><h2>device.utils module<a class="headerlink" href="#module-device.utils" title="Permalink to this headline"></a></h2>
+<p>Utility functions</p>
+<p>Provides simple helper/utility functions that are used throughout the programs
+modules and do not alter its state.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="device.utils.kmhToMps">
+<span class="sig-prename descclassname"><span class="pre">device.utils.</span></span><span class="sig-name descname"><span class="pre">kmhToMps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kmh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#device.utils.kmhToMps" title="Permalink to this definition"></a></dt>
+<dd><p>Converts kilometers/hour to metres/second</p>
+</dd></dl>
+
+</section>
+<section id="module-device">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-device" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jack Day.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

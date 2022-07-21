@@ -1,0 +1,9 @@
+@import url('/css/main.css');
+
+#auth-loader.error {
+    flex-direction: column-reverse;
+}
+
+#auth-loader:not(.error) #return-to-login {
+    display: none;
+}

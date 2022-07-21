@@ -1,0 +1,15 @@
+# Device Settings
+# ----------------------------------
+vehicleSpecs: # Vehicle Specifications
+  # These specifications are for an Abarth 500 EsseEsse
+  curbWeight: 1100  # kg
+  frontalArea: 2.1  # m^2
+  dragCoeff: 0.35  # Vehicle drag coefficient
+  gearCount: 5  # Gear count, excluding reverse
+  gears:  # RPM to Speed ratios to identify gears (rpm / speed)
+    - 110  # Reverse
+    - 120  # 1st gear
+    - 66  # 2nd gear...
+    - 44
+    - 33
+    - 22

@@ -1,0 +1,93 @@
+@import url('main.css');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/assets/img/login-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+main::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg);
+    content: '';
+    opacity: .9;
+}
+
+main > section {
+    display: flex;
+    width: min(60rem, var(--content-max-width));
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+#logo {
+    display: flex;
+    width: 25rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+#logo #text {
+    fill: var(--text-color);
+}
+
+#sign-in {
+    display: flex;
+    height: 3rem;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #4285f4;
+    margin: 0 2rem;
+    background: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 50%);
+    cursor: pointer;
+    transition: opacity .1s ease;
+}
+
+#sign-in:hover {
+    opacity: .9;
+}
+
+#sign-in > img {
+    width: 3em;
+    padding: 0 .8em;
+    background-color: white;
+}
+
+#sign-in > span {
+    display: flex;
+    align-items: center;
+    padding: .8em;
+    background-color: #4285f4;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 660px) {
+    #sign-in {
+        margin: 1rem 2rem 2rem;
+    }
+}

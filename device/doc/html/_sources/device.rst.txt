@@ -1,0 +1,101 @@
+device package
+==============
+
+Submodules
+----------
+
+device.api module
+-----------------
+
+.. automodule:: device.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.config module
+--------------------
+
+.. automodule:: device.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.db module
+----------------
+
+.. automodule:: device.db
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.display module
+---------------------
+
+.. automodule:: device.display
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.gps module
+-----------------
+
+.. automodule:: device.gps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.gsi module
+-----------------
+
+.. automodule:: device.gsi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.main module
+------------------
+
+.. automodule:: device.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.obd\_ii module
+---------------------
+
+.. automodule:: device.obd_ii
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.performance module
+-------------------------
+
+.. automodule:: device.performance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.settings module
+----------------------
+
+.. automodule:: device.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+device.utils module
+-------------------
+
+.. automodule:: device.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: device
+   :members:
+   :undoc-members:
+   :show-inheritance:

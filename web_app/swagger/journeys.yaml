@@ -1,0 +1,167 @@
+paths:
+  /journeys:
+    get:
+      summary: Get journeys
+      description: Gets the authenticated user's journeys, sorted with the most recently ended journeys first.
+      tags:
+        - Journeys
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: string
+            pattern: '^\d+$'
+          description: The maximum number of entries to be returned
+        - in: query
+          name: offset
+          schema:
+            type: string
+            pattern: '^\d+$'
+          description: The first N entries to be excluded from the response
+      responses:
+        200:
+          description: Retrieved journeys
+          headers:
+            More-Entries:
+              description: Whether more entries are available for retrieval, only returned when 'limit' is given.
+              schema:
+                type: boolean
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Journey'
+        400:
+          description: Invalid query parameters
+          content:
+            $ref: '#/components/responses/400Content'
+        401:
+          $ref: '#/components/responses/401'
+        500:
+          $ref: '#/components/responses/500'
+    post:
+      summary: Create a new journey
+      tags:
+        - Journeys
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/Journey'
+      responses:
+        201:
+          description: Journey created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    description: ID of created journey
+                    type: integer
+        400:
+          description: Invalid body data
+          content:
+            $ref: '#/components/responses/400Content'
+        401:
+          $ref: '#/components/responses/401'
+        500:
+          $ref: '#/components/responses/500'
+  /journeys/{journeyID}:
+    get:
+      summary: Get a journey
+      tags:
+        - Journeys
+      parameters:
+        - in: path
+          name: journeyID
+          schema:
+            type: string
+            pattern: '^\d+$'
+          required: true
+      responses:
+        200:
+          description: Retrieved journey data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Journey'
+        401:
+          $ref: '#/components/responses/401'
+        404:
+          description: Journey does not exist
+        500:
+          $ref: '#/components/responses/500'
+    put:
+      summary: Update a journey
+      tags:
+        - Journeys
+      parameters:
+        - in: path
+          name: journeyID
+          schema:
+            type: string
+            pattern: '^\d+$'
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/Journey'
+      responses:
+        204:
+          description: Journey updated
+        400:
+          description: Invalid body data
+          content:
+            $ref: '#/components/responses/400Content'
+        401:
+          $ref: '#/components/responses/401'
+        404:
+          description: Journey does not exist
+        500:
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    Journey:
+      allOf:
+        - type: object
+          required:
+            - journeyID
+          properties:
+            journeyID:
+              type: integer
+        - $ref: '#/components/requestBodies/Journey'
+  requestBodies:
+    Journey:
+      type: object
+      required:
+        - start
+        - end
+        - distance
+        - idleSecs
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        distance:
+          description: Journey distance in kilometres
+          type: integer
+          min: 0
+        idleSecs:
+          description: Total seconds of journey idles longer than 5 seconds
+          type: integer
+          min: 0
+        gsiAdh:
+          description: Gear Shift Indicator adherence percentage
+          type: number
+          format: float
+          multipleOf: 0.01
+          min: 0
+          max: 100

@@ -1,0 +1,42 @@
+paths:
+  /users:
+    post:
+      summary: Create a new user
+      description: Creates a new user using their Auth0 user_id.
+      tags:
+        - Users
+      responses:
+        201:
+          description: User Created
+        400:
+          description: User already exists
+        401:
+          description: Unauthorized - The request must contain a valid authorization token
+        500:
+          $ref: '#/components/responses/500'
+  /myself:
+    delete:
+      summary: Delete the authenticated user's account
+      tags:
+        - Users
+      responses:
+        200:
+          description: Account deleted successfully
+        401:
+          $ref: '#/components/responses/401'
+        500:
+          $ref: '#/components/responses/500'
+  /myself/registered:
+    get:
+      summary: Check if the authenticated user is registered
+      tags:
+        - Users
+      responses:
+        200:
+          description: Authenticated user is registered
+        204:
+          description: Authenticated user is not registered
+        401:
+          description: Unauthorized - The request must contain a valid authorization token
+        500:
+          $ref: '#/components/responses/500'

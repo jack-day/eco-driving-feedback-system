@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js/account.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Auth0.html">Auth0</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.authLoaderError">authLoaderError</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.authorize">authorize</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.checkRegistered">checkRegistered</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.initAuth0">initAuth0</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.removeAuthLoader">removeAuthLoader</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.signIn">signIn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#.signOut">signOut</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Auth0.html#~fetchAuthConfig">fetchAuthConfig</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-auth_js_callback.html">auth/js/callback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-auth_js_callback.html#~handleAuth0Redirect">handleAuth0Redirect</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-CoreUI.html">CoreUI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-CoreUI.html#~initAccountMenu">initAccountMenu</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-js_account.html">js/account</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-js_account.html#~deleteAccount">deleteAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-js_account.html#~initDeleteAccount">initDeleteAccount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-js_account.html#~initDeleteDialog">initDeleteDialog</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-js_login.html">js/login</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-js_login.html#~redirectSignedIn">redirectSignedIn</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-SwaggerJS.html">SwaggerJS</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-SwaggerJS.html#~authorizeSwagger">authorizeSwagger</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-SwaggerJS.html#~clearAuthBtnEventListeners">clearAuthBtnEventListeners</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-SwaggerJS.html#~clearEventListeners">clearEventListeners</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-SwaggerJS.html#~lockAuthBtns">lockAuthBtns</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">js/account.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module */
+import initCoreUI from './modules/coreUI.js';
+import { authorize, signOut } from './modules/auth0.js';
+
+const el = {};
+
+/** Initialise the 'Delete account permamently?' dialog */
+function initDeleteDialog() {
+    const deleteBtn = document.querySelector('#delete-account');
+    const dialog = document.querySelector('#verify-delete-dialog');
+    const cancelBtn = document.querySelector('#verify-delete-cancel');
+    el.verifyInput = document.querySelector('#verify-delete');
+    el.cancelBtn = document.querySelector('#verify-delete-confirm');
+
+    deleteBtn.addEventListener('click', () => {
+        dialog.onanimationend = () => {
+            dialog.classList.remove('fade-in');
+            dialog.onanimationend = null;
+        };
+        dialog.classList.add('fade-in');
+        dialog.show();
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.onanimationend = () => {
+            dialog.close();
+            dialog.classList.remove('fade-out');
+            dialog.onanimationend = null;
+            el.verifyInput.value = '';
+            el.cancelBtn.disabled = true;
+        };
+        dialog.classList.add('fade-out');
+    });
+}
+
+/** Delete account through API  */
+async function deleteAccount(token) {
+    const response = await fetch('/api/myself/', {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+    });
+
+    if (response.ok) {
+        signOut();
+    } else {
+        throw new Error('Failed to delete account');
+    }
+}
+
+/** Initialise event listeners for account deletion elements */
+function initDeleteAccount(accessToken) {
+    el.verifyInput.addEventListener('input', () => {
+        if (el.verifyInput.value === 'DELETE') {
+            el.cancelBtn.disabled = false;
+        } else {
+            el.cancelBtn.disabled = true;
+        }
+    });
+
+    el.cancelBtn.addEventListener('click', async () => {
+        const orgText = el.cancelBtn.textContent;
+        try {
+            el.cancelBtn.textContent = 'Deleting Account...';
+            await deleteAccount(accessToken);
+        } catch (err) {
+            el.cancelBtn.textContent = orgText;
+            throw err;
+        }
+    });
+}
+
+
+// Init
+// ----------------------------------------------
+async function init() {
+    initCoreUI();
+    initDeleteDialog();
+    const token = await authorize();
+    initDeleteAccount(token);
+}
+
+window.addEventListener('load', init);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Tue Apr 19 2022 00:39:50 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

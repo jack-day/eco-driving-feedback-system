@@ -1,0 +1,7 @@
+__pycache__
+/config.ini
+/gps.yaml
+/settings.yaml
+/.coverage
+/doc/sphinx/_build
+/doc/html/.buildinfo

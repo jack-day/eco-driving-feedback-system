@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: EcoDriven API
+  version: 1.0.0
+servers:
+  - url: /api
+$import:
+  - users.yaml
+  - journeys.yaml
+  - scores.yaml
+components:
+  securitySchemes:
+    OAuth2Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+  responses:
+    400Content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            errors:
+              type: array
+              items:
+                type: string
+    401:
+      description: Unauthorized - The request must contain a valid authorization token and the user of that token must be registered.
+    500:
+      description: The server encountered an error that it it does not know how to handle.
+security:
+  - OAuth2Bearer: []

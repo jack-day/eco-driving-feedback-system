@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - EcoDriven</title>
+    <link href="/assets/img/logo-icon.svg" rel="icon">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="js/index.js" type="module"></script>
+</head>
+<body>
+    <div id="auth-loader">
+        <svg height="50" width="50">
+            <circle cx="25" cy="25" r="20"/>
+        </svg>
+    </div>
+    <header>
+        <a id="logo" href="/">                
+            <svg viewBox="0 0 413 128" width="413" height="128" xmlns="http://www.w3.org/2000/svg">
+                <path id="text" aria-label="EcoDriven" fill="#202020" d="m170.8 52.2h-18.9v7.7h15.9v8.5h-15.9v8.8h18.8v8.8h-22.8-6.9v-42.7h10.9 18.9zm20.4 22.2h9.8q0 3.7-1.7 6.5-1.7 2.7-4.8 4.2-3.1 1.5-7 1.5-4.8 0-8.2-2-3.3-2.1-5-5.7-1.7-3.7-1.7-8.4v-0.5q0-4.8 1.7-8.5 1.7-3.6 5-5.7 3.4-2 8.2-2 4 0 7.1 1.5 3 1.5 4.7 4.4 1.7 3 1.7 7.1h-9.8q0-2-1-3.3-1-1.2-3-1.2-1.7 0-2.6 0.9-0.9 1-1.2 2.6-0.3 1.6-0.3 4.2v0.5q0 2.5 0.3 4.2 0.3 1.6 1.2 2.5 0.9 0.9 2.7 0.9 1.9 0 2.9-0.9 1-1 1-2.8zm12.5-4.5q0-4.7 1.8-8.3 1.8-3.7 5.2-5.8 3.5-2 8.4-2 5 0 8.4 2 3.5 2.1 5.3 5.8 1.8 3.6 1.8 8.3v0.6q0 4.7-1.8 8.4-1.8 3.6-5.2 5.7-3.5 2-8.4 2-4.9 0-8.4-2-3.5-2.1-5.3-5.7-1.8-3.7-1.8-8.4zm10.5 0.6q0 3.7 1.1 5.7 1.1 2 3.9 2 2.7 0 3.8-2 1.1-2 1.1-5.7v-0.6q0-3.5-1.1-5.6-1.1-2-3.9-2-2.7 0-3.8 2-1.1 2.1-1.1 5.6zm38.7-27.1q5.8 0 10.3 2.6 4.5 2.7 7.1 7.4 2.6 4.6 2.6 10.5v1.6q0 5.9-2.6 10.6-2.5 4.7-7 7.3-4.5 2.7-10.1 2.7h-9.6-4.6v-42.7h10.9zm8.7 22.1v-1.6q0-5.8-2.2-8.7-2.2-3-6.5-3h-3.1v25h3.3q4.1 0 6.3-2.9 2.2-2.9 2.2-8.8zm32.8-11.7q1.7 0 2.8 0.3l-0.2 10.3-0.8-0.1q-1.7-0.1-2.5-0.1-2.4 0-3.8 0.6-1.4 0.6-2.1 1.9v19.4h-10.5v-31.7h9.8l0.4 4.1q1.2-2.3 2.9-3.5 1.8-1.2 4-1.2zm11.7-12.9q1.7 0 3 0.7 1.3 0.7 2 1.9 0.8 1.2 0.8 2.7 0 1.6-0.7 2.8-0.8 1.2-2.1 1.8-1.3 0.7-3 0.7-1.7 0-3-0.7-1.3-0.6-2.1-1.8-0.7-1.2-0.7-2.8 0-1.5 0.7-2.7 0.8-1.2 2.1-1.9 1.3-0.7 3-0.7zm5.3 45.2h-10.5v-31.7h10.5zm23.3-31.7h11.1l-10.2 31.7h-6.5-4.4l-10.2-31.7h11.1l4.5 19zm42.8 14.9v4.5h-19.2q0.6 2.1 2.3 3.2 1.7 1.2 4.2 1.2 2.1 0 4-0.7 1.9-0.7 3.2-2.3l4.6 6.1q-1 1.4-2.9 2.7-1.8 1.2-4.3 1.9-2.5 0.8-5.3 0.8-5.1 0-8.9-2.1-3.8-2.1-5.8-5.7-1.9-3.5-1.9-7.6v-1.1q0-4.6 1.7-8.3 1.7-3.7 5.1-5.9 3.5-2.2 8.7-2.2 4.4 0 7.7 1.9 3.3 1.8 5.1 5.3 1.7 3.5 1.7 8.3zm-10.2-3q0.1-4-4.4-4-2.2 0-3.3 1.3-1.1 1.3-1.4 3.5h9.1zm32.9-12.4q4.6 0 7.3 2.9 2.6 2.9 2.6 9.7v19.6h-10.6v-19.7q0-1.7-0.5-2.6-0.5-0.9-1.4-1.2-0.8-0.3-2.3-0.3-2.6 0-3.8 1.8v22h-10.5v-31.7h9.8l0.4 3.7q1.6-2.1 3.9-3.2 2.2-1 5.1-1z"/>
+                <g id="icon" transform="translate(-122 -90)">
+                    <g id="light" fill="#9cf6b2" transform="translate(158.851 90)">
+                        <rect width="54" height="108" opacity="0.2"/>
+                        <rect width="54" height="94" transform="translate(0 14)" opacity="0.3"/>
+                        <rect width="54" height="81" transform="translate(0 27)" opacity="0.4"/>
+                        <rect width="54" height="67" transform="translate(0 41)" opacity="0.5"/>
+                        <rect width="54" height="54" transform="translate(0 54)" opacity="0.6"/>
+                        <rect width="54" height="40" transform="translate(0 68)" opacity="0.7"/>
+                    </g>
+                    <g id="plant" transform="translate(122 136.029)">
+                        <g id="lotus" fill="#7ED321">
+                            <path d="M40.368,79.178c19.1,6.075,28.8,29.183,28.8,29.183S47.9,121.621,28.8,115.546,0,86.363,0,86.363,21.267,73.1,40.368,79.178Z" transform="translate(0 -35.778)"/>
+                            <path d="M84.645,43.975C96.41,60.2,90.5,84.557,90.5,84.557S65.514,82.6,53.748,66.376s-5.855-40.582-5.855-40.582S72.88,27.748,84.645,43.975Z" transform="translate(-24.125 -11.974)"/>
+                            <path d="M156.8,79.178c-19.1,6.075-28.8,29.183-28.8,29.183s21.267,13.26,40.368,7.186,28.8-29.183,28.8-29.183S175.9,73.1,156.8,79.178Z" transform="translate(-69.169 -35.778)"/>
+                            <path d="M132.592,43.975c-11.765,16.227-5.855,40.582-5.855,40.582s24.986-1.953,36.752-18.18,5.855-40.582,5.855-40.582-24.986,1.954-36.752,18.181Z" transform="translate(-65.112 -11.974)"/>
+                            <path d="M130.852,36.511c0,20.043-19.082,36.291-19.082,36.291S92.689,56.554,92.689,36.511,111.771.219,111.771.219,130.852,16.468,130.852,36.511Z" transform="translate(-47.771 -0.219)"/>
+                        </g>
+                        <g id="tints" fill="#5c835a">
+                            <path d="M40.368,79.178c19.1,6.075,28.8,29.183,28.8,29.183S47.9,121.621,28.8,115.546,0,86.363,0,86.363,21.267,73.1,40.368,79.178Z" transform="translate(0 -35.778)" opacity="0.5"/>
+                            <path d="M84.645,43.975C96.41,60.2,90.5,84.557,90.5,84.557S65.514,82.6,53.748,66.376s-5.855-40.582-5.855-40.582S72.88,27.748,84.645,43.975Z" transform="translate(-24.125 -11.974)" opacity="0.4"/>
+                            <path d="M156.8,79.178c-19.1,6.075-28.8,29.183-28.8,29.183s21.267,13.26,40.368,7.186,28.8-29.183,28.8-29.183S175.9,73.1,156.8,79.178Z" transform="translate(-69.169 -35.778)" opacity="0.1"/>
+                            <path d="M132.592,43.975c-11.765,16.227-5.855,40.582-5.855,40.582s24.986-1.953,36.752-18.18,5.855-40.582,5.855-40.582-24.986,1.954-36.752,18.181Z" transform="translate(-65.112 -11.974)" opacity="0.2"/>
+                            <path d="M130.852,36.511c0,20.043-19.082,36.291-19.082,36.291S92.689,56.554,92.689,36.511,111.771.219,111.771.219,130.852,16.468,130.852,36.511Z" transform="translate(-47.771 -0.219)" opacity="0.3"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div id="account">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <menu id="account-menu" class="hide">
+                <a href="/account"><li>Account Settings</li></a>
+                <a id="sign-out" href="#"><li>Sign Out</li></a>
+            </menu>
+        </div>
+    </header>
+    <main>
+        <h1>Dashboard</h1>
+        <section>
+            <section id="eco-driving-performance">
+                <h2>Eco-Driving Performance</h2>
+                <section>
+                    <svg id="eco-driving-score" viewBox="0 0 36 36">
+                        <path id="score-track" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path id="score-indicator" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <text id="score-value" x="50%" y="50%" dominant-baseline="central" text-anchor="middle">0</text>
+                    </svg>
+                    <img id="score-img" src="/assets/img/plant/80_to_100.png">
+                </section>
+            </section>
+            <section>
+                <h2>Behaviours to Improve</h2>
+                <ol id="behaviours-to-improve"></ol>
+            </section>
+            <section>
+                <h2>Journeys</h2>
+                <div id="journeys-container">
+                    <table id="journeys" data-offset="0">
+                        <tr>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Distance</th>
+                            <th>Idle Time</th>
+                            <th>GSI Adherence</th>
+                        </tr>
+                    </table>
+                    <button id="journeys-load-more">Load More</button>
+                    <p class="error">An error occured.</p>
+                </div>
+            </section>
+            <section>
+                <h2>Performance</h2>
+                <section id="performance">
+                    <header>
+                        <div>
+                            <div id="performance-factor-name">
+                                <h3>Starting Acceleration Smoothness</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
+                                    <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
+                                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <p id="performance-factor-desc"></p>
+                            <menu id="performance-factor-menu" class="hide">
+                                <template id="performance-factor-menu-item-template">
+                                    <li>
+                                        <span>One</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
+                                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                                            <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                        </svg>
+                                    </li>
+                                </template>
+                            </menu>
+                        </div>
+                        <div>
+                            <p>Current Score</p>
+                            <h1 id="performance-factor-score"></h1>
+                        </div>
+                    </header>
+                    <menu id="performance-time-menu">
+                        <li data-max-days-ago="30" data-selected>1M</li>
+                        <li data-max-days-ago="91">3M</li>
+                        <li data-max-days-ago="183">6M</li>
+                        <li data-max-days-ago="365">1Y</li>
+                        <li data-max-days-ago="All">All</li>
+                    </menu>
+                    <canvas id="performance-graph" width="400" height="200"></canvas>
+                    <p class="error">An error occured.</p>
+                </section>
+            </section>
+        </section>
+        <p id="no-data-msg" class="notice hide">You haven't collected any data yet. Check back later after driving to see your feedback.</p>
+        <p class="error notice hide">An error occurred, our bad, please try to reload the page.</p>
+    </main>
+</body>
+</html>
