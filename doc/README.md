@@ -1,4 +1,7 @@
-# Design Documentation
+# Documentation
+
+## Requirements
+Requirements can be found in [requirements.md](requirements.md).
 
 ## System Architecture Diagram
 ![System Architecture Diagram](img/system_architecture.jpg)

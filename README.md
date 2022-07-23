@@ -37,6 +37,12 @@ The Assetto Corsa App used to retrieve and send the simulated ECU Data to the
 OBD emulator can be found in [assettocorsa/](assettocorsa/).
 
 
+## Documentation
+Documentation for the project can be found in [doc/](doc/). The device and web
+app also include their own documentation in a sub-directory of the same name
+within their respective directories.
+
+
 ## File Structure
 ```
 /
