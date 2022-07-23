@@ -1,15 +1,15 @@
 # Design Documentation
 
 ## System Architecture Diagram
-![System Architecture Diagram](img/system_architecture.png)
+![System Architecture Diagram](img/system_architecture.jpg)
 
 
 ## Device Entity Relationship Diagram
-![Device Entity Relationship Diagram](img/device_erd.png)
+![Device Entity Relationship Diagram](img/device_erd.jpg)
 
 
 ## Web App Entity Relationship Diagram
-![Web App Entity Relationship Diagram](img/web_app_erd.png)
+![Web App Entity Relationship Diagram](img/web_app_erd.jpg)
 
 
 ## User Interface Prototypes
