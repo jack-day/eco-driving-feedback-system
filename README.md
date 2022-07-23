@@ -2,6 +2,8 @@
 
 > University Final Year Engineering Project
 
+<img src="doc/img/device_display.jpg" alt="Eco-Driving Device In Operation" width="49%"/> <img src="doc/img/web_app_dashboard.png" alt="Web App Dashboard" width="49%"/>
+
 ## Abstract
 Global warming is an alarming threat for the planet’s future and efforts
 must be made to reduce emissions. The transport sector is one of the largest
