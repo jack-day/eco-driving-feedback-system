@@ -23,7 +23,8 @@ if (process.env.NODE_ENV) {
     if (configs.hasOwnProperty(process.env.NODE_ENV)) {
         config = configs[process.env.NODE_ENV];
     } else {
-        throw Error(`Environment '${process.env.NODE_ENV}' does not exist within config`);
+        console.warn(`Environment '${process.env.NODE_ENV}' does not exist within config, using default`);
+        config = configs.default;
     }
 } else {
     if (configs.default) {

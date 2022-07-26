@@ -9,11 +9,11 @@
   "scripts": {
     "start": "tsc && node --experimental-specifier-resolution=node dist/src/app.js",
     "dev": "nodemon",
+    "demo": "cross-env NODE_ENV=demo npm run start",
     "test": "cross-env NODE_ENV=testing NODE_OPTIONS=--experimental-vm-modules npx jest -i ./tests --collectCoverage",
     "setup:app": "createdb ecodriven && psql ecodriven < db/init.sql",
     "setup:tests": "createdb ecodriven_test && psql ecodriven_test < db/init.sql",
     "setup": "npm run setup:app && npm run setup:tests",
-    "example-data": "psql ecodriven < db/example_data.sql",
     "teardown:app": "dropdb ecodriven",
     "teardown:tests": "dropdb ecodriven_test",
     "teardown": "npm run teardown:app && npm run teardown:tests",

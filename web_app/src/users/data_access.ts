@@ -1,4 +1,6 @@
 import { QueryResult } from 'pg';
+import { readFile } from 'fs/promises';
+import path from 'path';
 import pool from '../db';
 
 /** Check if a user already exists */
@@ -19,6 +21,16 @@ export async function insertUser(auth0UserID: string) {
         'INSERT INTO usr (auth0_user_id) VALUES ($1) RETURNING usr_id',
         [auth0UserID]
     );
+
+    // Insert example data in demo mode for the first user 
+    if (rows[0].usr_id === 1 && process.env.NODE_ENV === 'demo') {
+        const exampleData = await readFile(
+            path.join(process.cwd(), 'db/example_data.sql'),
+            { encoding: 'utf8' }
+        )
+        await pool.query(exampleData);
+    }
+
     return rows[0].usr_id;
 }
 
