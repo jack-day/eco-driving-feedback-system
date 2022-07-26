@@ -8,7 +8,7 @@ export default {
             callbackURL: 'http://localhost:8080/auth/callback',
         },
         db: {
-            host: 'localhost',
+            host: process.env.DB_HOST || 'localhost',
             database: 'ecodriven',
             user: 'postgres',
             password: 'postgres',
