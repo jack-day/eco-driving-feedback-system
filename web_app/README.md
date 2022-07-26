@@ -1,6 +1,28 @@
 # Eco-Driving Web Application
 
-## Dependencies
+## Docker
+The web app can be run with Docker using:
+```
+docker compose up -d
+```
+
+Once running, head to [http://localhost:8080](http://localhost:8080). Ensure
+third-party cookies are enabled, otherwise Auth0 will be unable to authenticate
+you.
+
+The app will run in demo mode, which will apply some example data to the first
+account created, allowing you to see how the web app functions without needing a
+running eco-driving device.
+
+By default, the docker configuration will automatically copy [config_default.js](config_default.js)
+to use as the config. You are free to create and configure your own `config.js`
+file from [config_default.js](config_default.js) and it will be used instead.
+However, you may need to rebuild your image  by applying the `--build` flag if
+you have already run `docker compose up -d`.
+
+
+## Manual Installation
+### Dependencies
 Required dependencies that must be installed for the web app to run. Other
 dependency versions may be compatible but only those listed have been tested 
 and are known to work.
@@ -11,23 +33,17 @@ and are known to work.
 
 Running `npm install` will install all remaining dependencies.
 
-
-## Setup
+### Setup
 To setup the web app, first run:
 ```
 npm run setup
 ```
 
-After which, create a config.js file using [config_default.js](config_default.js)
-as a template, replacing any values as necessary. You should only need to change
-the database user and password values for the web app to run.
+After which, create a `config.js` file using [config_default.js](config_default.js)
+as a template, replacing any values if needed.
 
-If you wish to use your own Auth0 tenant for the web application, setup
-instructions can be found in [doc/auth0_setup.md](doc/auth0_setup.md).
-
-
-## Usage
-To run the web application, run:
+### Usage
+The web app can be run with:
 ```
 npm start
 ```
@@ -36,15 +52,20 @@ Once running, it will be reachable at [http://localhost:8080](http://localhost:8
 Ensure third-party cookies are enabled for `http://localhost:8080`, otherwise
 Auth0 will be unable to authenticate you.
 
-### Example Data
-Example data is provided and can be applied once you have created an account
-using the web application. You will be able to apply the example data by running:
+### Demo Mode
+Example data is provided and can be used by running the web app in demo mode.
+Demo mode will apply the example data to the first account created, allowing you
+to see how the web app functions without needing a running eco-driving device.
+
+To use demo mode, run:
 ```
-npm run example-data
+npm run demo
 ```
 
-The example data will be applied to the user with the usr_id of 1, so ensure
-your account is the first account created on the web application. 
+
+## Setting Up Your Own Auth0 Tenant
+If you wish to use your own Auth0 tenant for the web application, setup
+instructions can be found in [doc/auth0_setup.md](doc/auth0_setup.md).
 
 
 ## Testing
