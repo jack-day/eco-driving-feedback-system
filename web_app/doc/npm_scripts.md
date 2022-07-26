@@ -14,6 +14,14 @@ without precompiling and restarts when changes are made.
 npm run dev
 ```
 
+## demo
+Runs the web app in demo mode, which will apply some example data to the first
+account created, demonstrating the web app's functionality without needing
+a running eco-driving device.
+```
+npm run demo
+```
+
 ## test
 Runs the web app's unit tests using Jest.
 ```
